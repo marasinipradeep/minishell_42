@@ -1,10 +1,19 @@
+GENERAL NOTES
+-Use 'make norm' to norminette only the included files of the project exluding libft
+-Current approach to splitting commands and options will not work once we want to 
+	implelent pipes as it only works for single commands.
+-We should probably print the current directory in the prompt like bash.
+-Is '&' good for a prompt end? I wanted to differentiate from bash's '$'
+-Might be a good idea to mark comments with '-b and '-p'
+
+
+CODING STANDARD:
 I've made some extra coding standard rules to keep our project looking consistent
 and help prevent major confusion as we add to the project. If you would like something
 changed or removed/would like to add your own/just general questions let me know
 
-CODING STANDARD:
 -Make sure your code follows the norminette before pushing it to the repos. Comment
-	errors are fine though
+	related errors are fine though
 -Try to eliminate any leaks as you find them, though we'll do run a test for it when
 	we're almost ready to submit
 -Main.c should only contain the main function
@@ -20,8 +29,8 @@ TASKS TO BE COMPLETED
 -Lauching executables
 -Single quote handling
 -Double quote handling
--Redirection '<' for recirecting input
--Redirection '>' for recirecting output
+-Redirection '<' for redirecting input
+-Redirection '>' for redirecting output
 -Redirection '<<' should be given a delimiter to read input until it is seen. Doesnt
 	update history.
 -Redirection '>>' for redirecting output in append mode
@@ -47,6 +56,7 @@ BONUS TASKS TO BE COMPLETED (?)
 TASKS COMPLETED:
 -Basic main loop (bsemmler)
 -Display prompt when waiting (bsemmler)
+
 
 KNOWN BUGS:
 -No known bugs
