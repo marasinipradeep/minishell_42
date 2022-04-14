@@ -23,8 +23,7 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 
-int		check_valid_command(char *input);
-
-char	**split_input(char *input);
+int		get_command_id(char *input);
+void	switch_command(char *input);
 
 #endif

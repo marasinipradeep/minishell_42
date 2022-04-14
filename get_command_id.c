@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_valid_command.c                              :+:      :+:    :+:   */
+/*   get_command_id.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsemmler <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,19 +14,26 @@
 
 int	check_command(char *input, char *to_check);
 
-int	check_valid_command(char *input)
+int	get_command_id(char *input)
 {
 	//Check inputted command against list of commands -b
-	if (check_command(input, "echo") == 1
-		|| check_command(input, "cd") == 1
-		|| check_command(input, "pwd") == 1
-		|| check_command(input, "export") == 1
-		|| check_command(input, "unset") == 1
-		|| check_command(input, "env") == 1
-		|| check_command(input, "exit") == 1
-		|| ft_strncmp(input, "./", 2) == 0)
+	if (ft_strncmp(input, "./", 2) == 0)
+		return (0);
+	if (check_command(input, "echo") == 1)
 		return (1);
-	return (0);
+	if (check_command(input, "cd") == 1)
+		return (2);
+	if (check_command(input, "pwd") == 1)
+		return (3);
+	if (check_command(input, "export") == 1)
+		return (4);
+	if (check_command(input, "unset") == 1)
+		return (5);
+	if (check_command(input, "env") == 1)
+		return (6);
+	if (check_command(input, "exit") == 1)
+		return (7);
+	return (-1);
 }
 
 int	check_command(char *input, char *to_check)
