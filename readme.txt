@@ -40,8 +40,6 @@ TASKS TO BE COMPLETED
 -Handle ctrl-C, ctrl-D and ctrl-\ while executing
 -Handle ctrl-C, ctrl-D and ctrl-\ while in interactive mode
 -builtin 'echo' (with option -n)
--builtin 'cd' with only relative and absolute paths
--builtin 'pwd', no options
 -builtin 'export', no options
 -builtin 'unset', no options
 -builtin 'env', no options or arguments
@@ -56,6 +54,8 @@ BONUS TASKS TO BE COMPLETED (?)
 TASKS COMPLETED:
 -Basic main loop (bsemmler)
 -Display prompt when waiting (bsemmler)
+-builtin 'cd' with only relative and absolute paths
+-builtin 'pwd', no options
 
 
 KNOWN BUGS:

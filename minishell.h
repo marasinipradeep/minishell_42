@@ -27,6 +27,7 @@
 int		get_command_id(char *input);
 void	switch_command(char *input);
 
+void	command_cd(char **s_input);
 void	command_pwd(char **s_input);
 
 #endif

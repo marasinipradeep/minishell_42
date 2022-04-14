@@ -16,7 +16,7 @@ void	command_pwd(char **s_input)
 {
 	char	*cwd;
 
-	//Use of s_input, to appease -WWW, not needed for function
+	//Use of s_input to appease -WWW, not needed for function
 	s_input[0][0] = 'p';
 	//Create buffer with size of PATH_MAX, fill using getcwd to get
 	//the working directory and print

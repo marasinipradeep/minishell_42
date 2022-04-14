@@ -35,7 +35,7 @@ void	switch_command(char *input)
 		printf("COMMAND '%s' NOT YET IMPLEMENTED\n", s_input[0]);
 	else if (c_id == 2)
 		//command 'cd'
-		printf("COMMAND '%s' NOT YET IMPLEMENTED\n", s_input[0]);
+		command_cd(s_input);
 	else if (c_id == 3)
 		//command 'pwd'
 		command_pwd(s_input);
