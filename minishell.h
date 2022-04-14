@@ -19,11 +19,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <signal.h>
+# include <limits.h>
 
 # include <readline/readline.h>
 # include <readline/history.h>
 
 int		get_command_id(char *input);
 void	switch_command(char *input);
+
+void	command_pwd(char **s_input);
 
 #endif
