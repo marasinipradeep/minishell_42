@@ -14,18 +14,17 @@
 
 int	main(void)
 {
-	int		i;
+	int		run;
 	char	*input;
 	char	*output;
 
-	//Loops infinitely, exiting can be handled later -b
-	i = 0;
-	while (i == 0)
+	run = 1;
+	while (run == 1)
 	{
 		input = readline("minishell& ");
 		add_history(input);
 		//vv - Do stuff with the input in here - vv -b
-		output = switch_command(input);
+		output = switch_command(input, &run);
 		if (output != NULL)
 		{
 			printf("%s", output);

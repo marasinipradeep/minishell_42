@@ -49,9 +49,8 @@ char	*cd_relative(char **s_input)
 		ext = ft_strjoin("/", s_input[1]);
 		cwdext = ft_strjoin(cwd, ext);
 		if (chdir(cwdext) != 0)
-			output = 
-			ft_joinfree(ft_strjoin("minishell: ", s_input[1]), 1,
-				": No such file or directory\n", 0);
+			output = ft_joinfree(ft_strjoin("minishell: ", s_input[1]), 1,
+					": No such file or directory\n", 0);
 		free(ext);
 		free(cwdext);
 	}

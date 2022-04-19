@@ -15,7 +15,7 @@
 char	**split_input(char *input);
 void	free_split_input(char **s_input);
 
-char	*switch_command(char *input)
+char	*switch_command(char *input, int *run)
 {
 	int		c_id;
 	char	**s_input;
@@ -28,15 +28,15 @@ char	*switch_command(char *input)
 	if (c_id == -1)
 		//Invalid command
 		output = ft_joinfree(ft_strjoin("minishell: ", s_input[0]), 1,
-			": command not found\n", 0);
+				": command not found\n", 0);
 	else if (c_id == 0)
 		//command './'
 		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
-			"' NOT YET IMPLEMENTED\n", 0);
+				"' NOT YET IMPLEMENTED\n", 0);
 	else if (c_id == 1)
 		//command 'echo'
 		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
-			"' NOT YET IMPLEMENTED\n", 0);
+				"' NOT YET IMPLEMENTED\n", 0);
 	else if (c_id == 2)
 		//command 'cd'
 		output = command_cd(s_input);
@@ -46,19 +46,18 @@ char	*switch_command(char *input)
 	else if (c_id == 4)
 		//command 'export'
 		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
-			"' NOT YET IMPLEMENTED\n", 0);
+				"' NOT YET IMPLEMENTED\n", 0);
 	else if (c_id == 5)
 		//command 'unset'
 		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
-			"' NOT YET IMPLEMENTED\n", 0);
+				"' NOT YET IMPLEMENTED\n", 0);
 	else if (c_id == 6)
 		//command 'env'
 		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
-			"' NOT YET IMPLEMENTED\n", 0);
+				"' NOT YET IMPLEMENTED\n", 0);
 	else if (c_id == 7)
 		//command 'exit'
-		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
-			"' NOT YET IMPLEMENTED\n", 0);
+		*run = 0;
 	free_split_input(s_input);
 	return (output);
 }

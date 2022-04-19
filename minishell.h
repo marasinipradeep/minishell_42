@@ -27,7 +27,7 @@
 char	*ft_joinfree(char *str1, int free1, char *str2, int free2);
 
 int		get_command_id(char *input);
-char	*switch_command(char *input);
+char	*switch_command(char *input, int *run);
 
 char	*command_cd(char **s_input);
 char	*command_pwd(char **s_input);
