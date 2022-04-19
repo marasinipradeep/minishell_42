@@ -54,9 +54,9 @@ BONUS TASKS TO BE COMPLETED (?)
 TASKS COMPLETED:
 -Basic main loop (bsemmler)
 -Display prompt when waiting (bsemmler)
--builtin 'cd' with only relative and absolute paths
--builtin 'pwd', no options
+-builtin 'cd' with only relative and absolute paths (bsemmler)
+-builtin 'pwd', no options (bsemmler)
 
 
 KNOWN BUGS:
--No known bugs
+-No known bugs!

@@ -24,10 +24,12 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 
-int		get_command_id(char *input);
-void	switch_command(char *input);
+char	*ft_joinfree(char *str1, int free1, char *str2, int free2);
 
-void	command_cd(char **s_input);
-void	command_pwd(char **s_input);
+int		get_command_id(char *input);
+char	*switch_command(char *input);
+
+char	*command_cd(char **s_input);
+char	*command_pwd(char **s_input);
 
 #endif

@@ -16,6 +16,7 @@ int	main(void)
 {
 	int		i;
 	char	*input;
+	char	*output;
 
 	//Loops infinitely, exiting can be handled later -b
 	i = 0;
@@ -24,7 +25,12 @@ int	main(void)
 		input = readline("minishell& ");
 		add_history(input);
 		//vv - Do stuff with the input in here - vv -b
-		switch_command(input);
+		output = switch_command(input);
+		if (output != NULL)
+		{
+			printf("%s", output);
+			free(output);
+		}
 		free(input);
 	}
 }

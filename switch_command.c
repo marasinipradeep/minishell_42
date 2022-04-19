@@ -15,43 +15,52 @@
 char	**split_input(char *input);
 void	free_split_input(char **s_input);
 
-void	switch_command(char *input)
+char	*switch_command(char *input)
 {
 	int		c_id;
 	char	**s_input;
+	char	*output;
 
-	//Splits the input into the command and the options. This approach
-	//will also not work for pipes, so we will need to modify it later
+	//Splits the input into the command and the options.
 	c_id = get_command_id(input);
 	s_input = split_input(input);
+	output = NULL;
 	if (c_id == -1)
 		//Invalid command
-		printf("minishell: %s: command not found\n", s_input[0]);
+		output = ft_joinfree(ft_strjoin("minishell: ", s_input[0]), 1,
+			": command not found\n", 0);
 	else if (c_id == 0)
 		//command './'
-		printf("COMMAND '%s' NOT YET IMPLEMENTED\n", s_input[0]);
+		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
+			"' NOT YET IMPLEMENTED\n", 0);
 	else if (c_id == 1)
 		//command 'echo'
-		printf("COMMAND '%s' NOT YET IMPLEMENTED\n", s_input[0]);
+		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
+			"' NOT YET IMPLEMENTED\n", 0);
 	else if (c_id == 2)
 		//command 'cd'
-		command_cd(s_input);
+		output = command_cd(s_input);
 	else if (c_id == 3)
 		//command 'pwd'
-		command_pwd(s_input);
+		output = command_pwd(s_input);
 	else if (c_id == 4)
 		//command 'export'
-		printf("COMMAND '%s' NOT YET IMPLEMENTED\n", s_input[0]);
+		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
+			"' NOT YET IMPLEMENTED\n", 0);
 	else if (c_id == 5)
 		//command 'unset'
-		printf("COMMAND '%s' NOT YET IMPLEMENTED\n", s_input[0]);
+		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
+			"' NOT YET IMPLEMENTED\n", 0);
 	else if (c_id == 6)
 		//command 'env'
-		printf("COMMAND '%s' NOT YET IMPLEMENTED\n", s_input[0]);
+		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
+			"' NOT YET IMPLEMENTED\n", 0);
 	else if (c_id == 7)
 		//command 'exit'
-		printf("COMMAND '%s' NOT YET IMPLEMENTED\n", s_input[0]);
+		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
+			"' NOT YET IMPLEMENTED\n", 0);
 	free_split_input(s_input);
+	return (output);
 }
 
 char	**split_input(char *input)
