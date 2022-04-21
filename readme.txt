@@ -43,7 +43,6 @@ TASKS TO BE COMPLETED
 -builtin 'export', no options
 -builtin 'unset', no options
 -builtin 'env', no options or arguments
--builtin 'exit', no options
 
 
 BONUS TASKS TO BE COMPLETED (?)

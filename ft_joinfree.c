@@ -17,8 +17,6 @@
 char	*ft_joinfree(char *str1, int free1, char *str2, int free2)
 {
 	char	*joined;
-	int		pos;
-	int		i;
 
 	joined = ft_strjoin(str1, str2);
 	if (free1 == 1)

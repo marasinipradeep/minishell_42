@@ -34,28 +34,32 @@ char	*switch_command(char *input, int *run)
 		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
 				"' NOT YET IMPLEMENTED\n", 0);
 	else if (c_id == 1)
-		//command 'echo'
+		//command for environment variables
 		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
 				"' NOT YET IMPLEMENTED\n", 0);
 	else if (c_id == 2)
+		//command 'echo'
+		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
+				"' NOT YET IMPLEMENTED\n", 0);
+	else if (c_id == 3)
 		//command 'cd'
 		output = command_cd(s_input);
-	else if (c_id == 3)
+	else if (c_id == 4)
 		//command 'pwd'
 		output = command_pwd(s_input);
-	else if (c_id == 4)
+	else if (c_id == 5)
 		//command 'export'
 		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
 				"' NOT YET IMPLEMENTED\n", 0);
-	else if (c_id == 5)
+	else if (c_id == 6)
 		//command 'unset'
 		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
 				"' NOT YET IMPLEMENTED\n", 0);
-	else if (c_id == 6)
+	else if (c_id == 7)
 		//command 'env'
 		output = ft_joinfree(ft_strjoin("COMMAND '", s_input[0]), 1,
 				"' NOT YET IMPLEMENTED\n", 0);
-	else if (c_id == 7)
+	else if (c_id == 8)
 		//command 'exit'
 		*run = 0;
 	free_split_input(s_input);
@@ -70,7 +74,7 @@ char	**split_input(char *input)
 	//Split input into the command and options -b
 	s_input = malloc(sizeof(char *) * 2);
 	i = 0;
-	while (input[i] != ' ' && input[i])
+	while (input[i] != ' ' && input[i] != '=' && input[i])
 		i++;
 	s_input[0] = malloc(sizeof(char) * (i + 1));
 	if (input[i] != 0 && input[i + 1] != 0)
